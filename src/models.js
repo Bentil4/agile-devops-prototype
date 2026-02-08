@@ -42,13 +42,13 @@ export class TaskManager {
     return task;
   }
 
-  // deleteTask(taskId) {
-  //   if (this.tasks[taskId]) {
-  //     delete this.tasks[taskId];
-  //     return true;
-  //   }
-  //   return false;
-  // }
+  deleteTask(taskId) {
+    if (this.tasks[taskId]) {
+      delete this.tasks[taskId];
+      return true;
+    }
+    return false;
+  }
 
   // toggleComplete(taskId) {
   //   const task = this.tasks[taskId];

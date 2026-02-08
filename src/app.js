@@ -46,13 +46,13 @@ app.put("/tasks/:id", (req, res) => {
   res.status(200).json(task);
 });
 
-// app.delete('/tasks/:id', (req, res) => {
-//   const success = taskManager.deleteTask(parseInt(req.params.id));
-//   if (!success) {
-//     return res.status(404).json({ error: 'Task not found' });
-//   }
-//   res.status(204).send();
-// });
+app.delete('/tasks/:id', (req, res) => {
+  const success = taskManager.deleteTask(parseInt(req.params.id));
+  if (!success) {
+    return res.status(404).json({ error: 'Task not found' });
+  }
+  res.status(204).send();
+});
 
 // app.patch('/tasks/:id/complete', (req, res) => {
 //   const task = taskManager.toggleComplete(parseInt(req.params.id));
