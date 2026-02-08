@@ -4,32 +4,32 @@ export class TaskManager {
     this.nextId = 1;
   }
 
-  createTask(title, description = '') {
+  createTask(title, description = "") {
     const task = {
       id: this.nextId,
       title,
       description,
       completed: false,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
     this.tasks[this.nextId] = task;
     this.nextId++;
     return task;
   }
 
-  // getAllTasks(status) {
-  //   const tasks = Object.values(this.tasks);
-  //   if (status === 'completed') {
-  //     return tasks.filter(t => t.completed);
-  //   } else if (status === 'active') {
-  //     return tasks.filter(t => !t.completed);
-  //   }
-  //   return tasks;
-  // }
+  getAllTasks(status) {
+    const tasks = Object.values(this.tasks);
+    if (status === "completed") {
+      return tasks.filter((t) => t.completed);
+    } else if (status === "active") {
+      return tasks.filter((t) => !t.completed);
+    }
+    return tasks;
+  }
 
-  // getTask(taskId) {
-  //   return this.tasks[taskId] || null;
-  // }
+  getTask(taskId) {
+    return this.tasks[taskId] || null;
+  }
 
   // updateTask(taskId, data) {
   //   const task = this.tasks[taskId];
