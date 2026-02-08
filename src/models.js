@@ -31,16 +31,16 @@ export class TaskManager {
     return this.tasks[taskId] || null;
   }
 
-  // updateTask(taskId, data) {
-  //   const task = this.tasks[taskId];
-  //   if (!task) return null;
+  updateTask(taskId, data) {
+    const task = this.tasks[taskId];
+    if (!task) return null;
 
-  //   if (data.title !== undefined) task.title = data.title;
-  //   if (data.description !== undefined) task.description = data.description;
-  //   if (data.completed !== undefined) task.completed = data.completed;
+    if (data.title !== undefined) task.title = data.title;
+    if (data.description !== undefined) task.description = data.description;
+    if (data.completed !== undefined) task.completed = data.completed;
 
-  //   return task;
-  // }
+    return task;
+  }
 
   // deleteTask(taskId) {
   //   if (this.tasks[taskId]) {
