@@ -1,123 +1,99 @@
 # Sprint 1 Retrospective
 
 ## Sprint Overview
-- **Duration:** [Start Date] - [End Date]
+
+- **Duration:** 05/02/2026 - 08/02/2026
 - **Stories Completed:** 4 out of 4
 - **Story Points Completed:** 8 out of 8
 
 ---
 
-## What Went Well ✅
+## What Went Well
 
-### 1. [Positive Point 1]
-**Description:** [Explain what went well]  
-**Why it worked:** [Reason]  
-**Continue doing:** [How to maintain this]
+### 1. Test-Driven Development
 
-### 2. [Positive Point 2]
-**Description:** [Explain what went well]  
-**Why it worked:** [Reason]  
-**Continue doing:** [How to maintain this]
+- **Observation:** Writing tests alongside development caught bugs early
+- **Impact:** Higher code quality, fewer bugs in production
+- **Action:** Continue TDD approach in Sprint 2
 
-### 3. [Positive Point 3]
-**Description:** [Explain what went well]  
-**Why it worked:** [Reason]  
-**Continue doing:** [How to maintain this]
+### 2. Pair Programming on Complex Features
 
----
+- **Observation:** Pairing on CRUD operations led to better design
+- **Impact:** Knowledge sharing, fewer code review iterations
+- **Action:** Continue pairing on complex features
 
-## What Didn't Go Well ❌
 
-### 1. [Challenge 1]
-**Description:** [What was the problem]  
-**Impact:** [How it affected the sprint]  
-**Root Cause:** [Why it happened]
+### 3. Clear Requirements
 
-### 2. [Challenge 2]
-**Description:** [What was the problem]  
-**Impact:** [How it affected the sprint]  
-**Root Cause:** [Why it happened]
+- **Observation:** User stories were well-defined with clear acceptance criteria
+- **Impact:** Less back-and-forth, faster development
+- **Action:** Maintain quality of user story writing
 
 ---
 
-## Specific Improvements for Sprint 2 🎯
+## What Didn't Go Well
 
-### Improvement 1: [Title]
-**Problem:** [What needs to improve]  
-**Action:** [Specific action to take]  
-**How to measure:** [How you'll know it worked]  
-**Owner:** Self  
-**Priority:** High/Medium/Low
+### 1. Late Test Writing
 
-**Example:**
-- Problem: Commits were too large and infrequent
-- Action: Commit after completing each function/test
-- How to measure: Aim for 5+ commits per day with smaller changesets
-- Priority: High
+- **Observation:** Some tests not written after code implementation
+- **Impact:** Missed opportunity for TDD benefits
+- **Action:** Write tests after implementation
+- **Improvement:** Write tests first or simultaneously
 
-### Improvement 2: [Title]
-**Problem:** [What needs to improve]  
-**Action:** [Specific action to take]  
-**How to measure:** [How you'll know it worked]  
-**Owner:** Self  
-**Priority:** High/Medium/Low
+---
+
+## Specific Improvements for Sprint 2 
+
+#### 1. Automated Code Quality Checks
+
+- **Observation:** Manual linting and formatting checks are time-consuming
+- **Impact:** Inconsistent code style, wasted review time
+- **Action:** Start using automated linters and formatters
+- **Implementation:** Setup ESLint pre-commit hooks in Sprint 2
 
 ---
 
 ## Process Observations
 
 ### Time Management
+
 - **Estimated vs Actual:** [How accurate were story point estimates?]
 - **Bottlenecks:** [Where did work slow down?]
 - **Efficiency:** [What could speed up development?]
 
 ### Technical Practices
+
 - **Testing:** [How effective was the testing approach?]
 - **CI/CD:** [How well did the pipeline work?]
 - **Code Quality:** [Was code quality maintained?]
 
 ### Documentation
+
 - **Completeness:** [Was documentation kept up to date?]
 - **Clarity:** [Was documentation clear and useful?]
 - **Timeliness:** [Was documentation done alongside code?]
 
 ---
 
-## Key Lessons Learned 📚
+## Key Lessons Learned 
 
-1. **[Lesson 1]**
-   - What I learned: [Description]
-   - How to apply: [Future application]
+> "Test-driven development significantly improved our code quality"
 
-2. **[Lesson 2]**
-   - What I learned: [Description]
-   - How to apply: [Future application]
+> "Clear communication and daily standups kept us aligned"
 
-3. **[Lesson 3]**
-   - What I learned: [Description]
-   - How to apply: [Future application]
+> "We need better automation to reduce manual overhead"
 
 ---
 
 ## Action Items for Sprint 2
 
-| Action Item | Description | Priority | Status |
-|-------------|-------------|----------|--------|
-| [Action 1] | [Details] | High | To Do |
-| [Action 2] | [Details] | Medium | To Do |
-| [Action 3] | [Details] | Low | To Do |
+| Action                        | Owner | Priority | Status |
+| ----------------------------- | ----- | -------- | ------ |
+| Setup ESLint pre-commit hooks | Team  | High     | Todo   |
+| Implement CI/CD pipeline      | Team  | High     | Todo   |
 
 ---
 
-## Sprint 2 Commitments
-
-Based on this retrospective, I commit to:
-
-1. **[Commitment 1]:** [Specific behavior change]
-2. **[Commitment 2]:** [Specific behavior change]
-3. **[Commitment 3]:** [Specific behavior change]
-
----
 
 ## Metrics to Track in Sprint 2
 
@@ -130,15 +106,3 @@ To measure improvement, I will track:
 - [ ] [Other metric]
 
 ---
-
-## Overall Sprint 1 Assessment
-
-**Rating:** [1-5 stars] ⭐⭐⭐⭐⭐
-
-**Summary:**
-[2-3 sentences summarizing the sprint experience and key takeaways]
-
-**Confidence for Sprint 2:** [High/Medium/Low]
-
-**Reason:**
-[Why you feel this way about Sprint 2]
