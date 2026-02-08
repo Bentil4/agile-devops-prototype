@@ -64,84 +64,84 @@ describe("Task Management API", () => {
     });
   });
 
-  // describe("PUT /tasks/:id", () => {
-  //   it("should update a task", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "Original" });
+  describe("PUT /tasks/:id", () => {
+    it("should update a task", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "Original" });
 
-  //     const taskId = createRes.body.id;
-  //     const res = await request(app)
-  //       .put(`/tasks/${taskId}`)
-  //       .send({ title: "Updated", description: "New description" });
+      const taskId = createRes.body.id;
+      const res = await request(app)
+        .put(`/tasks/${taskId}`)
+        .send({ title: "Updated", description: "New description" });
 
-  //     expect(res.status).toBe(200);
-  //     expect(res.body.title).toBe("Updated");
-  //     expect(res.body.description).toBe("New description");
-  //   });
+      expect(res.status).toBe(200);
+      expect(res.body.title).toBe("Updated");
+      expect(res.body.description).toBe("New description");
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app)
-  //       .put("/tasks/999")
-  //       .send({ title: "Updated" });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app)
+        .put("/tasks/999")
+        .send({ title: "Updated" });
 
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+      expect(res.status).toBe(404);
+    });
+  });
 
-  // describe("DELETE /tasks/:id", () => {
-  //   it("should delete a task", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "To Delete" });
+  describe("DELETE /tasks/:id", () => {
+    it("should delete a task", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "To Delete" });
 
-  //     const taskId = createRes.body.id;
-  //     const deleteRes = await request(app).delete(`/tasks/${taskId}`);
-  //     expect(deleteRes.status).toBe(204);
+      const taskId = createRes.body.id;
+      const deleteRes = await request(app).delete(`/tasks/${taskId}`);
+      expect(deleteRes.status).toBe(204);
 
-  //     const getRes = await request(app).get(`/tasks/${taskId}`);
-  //     expect(getRes.status).toBe(404);
-  //   });
+      const getRes = await request(app).get(`/tasks/${taskId}`);
+      expect(getRes.status).toBe(404);
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app).delete("/tasks/999");
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app).delete("/tasks/999");
+      expect(res.status).toBe(404);
+    });
+  });
 
-  // describe("PATCH /tasks/:id/complete", () => {
-  //   it("should toggle task completion", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "Test Task" });
+  describe("PATCH /tasks/:id/complete", () => {
+    it("should toggle task completion", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "Test Task" });
 
-  //     const taskId = createRes.body.id;
-  //     const res = await request(app).patch(`/tasks/${taskId}/complete`);
+      const taskId = createRes.body.id;
+      const res = await request(app).patch(`/tasks/${taskId}/complete`);
 
-  //     expect(res.status).toBe(200);
-  //     expect(res.body.completed).toBe(true);
-  //   });
+      expect(res.status).toBe(200);
+      expect(res.body.completed).toBe(true);
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app).patch("/tasks/999/complete");
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app).patch("/tasks/999/complete");
+      expect(res.status).toBe(404);
+    });
+  });
 
-  // describe("GET /tasks?status=", () => {
-  //   it("should filter tasks by status", async () => {
-  //     const task1 = await request(app).post("/tasks").send({ title: "Task 1" });
-  //     const task2 = await request(app).post("/tasks").send({ title: "Task 2" });
+  describe("GET /tasks?status=", () => {
+    it("should filter tasks by status", async () => {
+      const task1 = await request(app).post("/tasks").send({ title: "Task 1" });
+      const task2 = await request(app).post("/tasks").send({ title: "Task 2" });
 
-  //     await request(app).patch(`/tasks/${task2.body.id}/complete`);
+      await request(app).patch(`/tasks/${task2.body.id}/complete`);
 
-  //     const completedRes = await request(app).get("/tasks?status=completed");
-  //     expect(completedRes.status).toBe(200);
-  //     expect(completedRes.body.some((t) => t.completed)).toBe(true);
+      const completedRes = await request(app).get("/tasks?status=completed");
+      expect(completedRes.status).toBe(200);
+      expect(completedRes.body.some((t) => t.completed)).toBe(true);
 
-  //     const activeRes = await request(app).get("/tasks?status=active");
-  //     expect(activeRes.status).toBe(200);
-  //     expect(activeRes.body.every((t) => !t.completed)).toBe(true);
-  //   });
-  // });
+      const activeRes = await request(app).get("/tasks?status=active");
+      expect(activeRes.status).toBe(200);
+      expect(activeRes.body.every((t) => !t.completed)).toBe(true);
+    });
+  });
 });

@@ -31,29 +31,29 @@ export class TaskManager {
     return this.tasks[taskId] || null;
   }
 
-  // updateTask(taskId, data) {
-  //   const task = this.tasks[taskId];
-  //   if (!task) return null;
+  updateTask(taskId, data) {
+    const task = this.tasks[taskId];
+    if (!task) return null;
 
-  //   if (data.title !== undefined) task.title = data.title;
-  //   if (data.description !== undefined) task.description = data.description;
-  //   if (data.completed !== undefined) task.completed = data.completed;
+    if (data.title !== undefined) task.title = data.title;
+    if (data.description !== undefined) task.description = data.description;
+    if (data.completed !== undefined) task.completed = data.completed;
 
-  //   return task;
-  // }
+    return task;
+  }
 
-  // deleteTask(taskId) {
-  //   if (this.tasks[taskId]) {
-  //     delete this.tasks[taskId];
-  //     return true;
-  //   }
-  //   return false;
-  // }
+  deleteTask(taskId) {
+    if (this.tasks[taskId]) {
+      delete this.tasks[taskId];
+      return true;
+    }
+    return false;
+  }
 
-  // toggleComplete(taskId) {
-  //   const task = this.tasks[taskId];
-  //   if (!task) return null;
-  //   task.completed = !task.completed;
-  //   return task;
-  // }
+  toggleComplete(taskId) {
+    const task = this.tasks[taskId];
+    if (!task) return null;
+    task.completed = !task.completed;
+    return task;
+  }
 }
