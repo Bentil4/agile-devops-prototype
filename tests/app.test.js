@@ -109,39 +109,39 @@ describe("Task Management API", () => {
     });
   });
 
-  // describe("PATCH /tasks/:id/complete", () => {
-  //   it("should toggle task completion", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "Test Task" });
+  describe("PATCH /tasks/:id/complete", () => {
+    it("should toggle task completion", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "Test Task" });
 
-  //     const taskId = createRes.body.id;
-  //     const res = await request(app).patch(`/tasks/${taskId}/complete`);
+      const taskId = createRes.body.id;
+      const res = await request(app).patch(`/tasks/${taskId}/complete`);
 
-  //     expect(res.status).toBe(200);
-  //     expect(res.body.completed).toBe(true);
-  //   });
+      expect(res.status).toBe(200);
+      expect(res.body.completed).toBe(true);
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app).patch("/tasks/999/complete");
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app).patch("/tasks/999/complete");
+      expect(res.status).toBe(404);
+    });
+  });
 
-  // describe("GET /tasks?status=", () => {
-  //   it("should filter tasks by status", async () => {
-  //     const task1 = await request(app).post("/tasks").send({ title: "Task 1" });
-  //     const task2 = await request(app).post("/tasks").send({ title: "Task 2" });
+  describe("GET /tasks?status=", () => {
+    it("should filter tasks by status", async () => {
+      const task1 = await request(app).post("/tasks").send({ title: "Task 1" });
+      const task2 = await request(app).post("/tasks").send({ title: "Task 2" });
 
-  //     await request(app).patch(`/tasks/${task2.body.id}/complete`);
+      await request(app).patch(`/tasks/${task2.body.id}/complete`);
 
-  //     const completedRes = await request(app).get("/tasks?status=completed");
-  //     expect(completedRes.status).toBe(200);
-  //     expect(completedRes.body.some((t) => t.completed)).toBe(true);
+      const completedRes = await request(app).get("/tasks?status=completed");
+      expect(completedRes.status).toBe(200);
+      expect(completedRes.body.some((t) => t.completed)).toBe(true);
 
-  //     const activeRes = await request(app).get("/tasks?status=active");
-  //     expect(activeRes.status).toBe(200);
-  //     expect(activeRes.body.every((t) => !t.completed)).toBe(true);
-  //   });
-  // });
+      const activeRes = await request(app).get("/tasks?status=active");
+      expect(activeRes.status).toBe(200);
+      expect(activeRes.body.every((t) => !t.completed)).toBe(true);
+    });
+  });
 });
