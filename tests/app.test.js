@@ -64,30 +64,30 @@ describe("Task Management API", () => {
     });
   });
 
-  // describe("PUT /tasks/:id", () => {
-  //   it("should update a task", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "Original" });
+  describe("PUT /tasks/:id", () => {
+    it("should update a task", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "Original" });
 
-  //     const taskId = createRes.body.id;
-  //     const res = await request(app)
-  //       .put(`/tasks/${taskId}`)
-  //       .send({ title: "Updated", description: "New description" });
+      const taskId = createRes.body.id;
+      const res = await request(app)
+        .put(`/tasks/${taskId}`)
+        .send({ title: "Updated", description: "New description" });
 
-  //     expect(res.status).toBe(200);
-  //     expect(res.body.title).toBe("Updated");
-  //     expect(res.body.description).toBe("New description");
-  //   });
+      expect(res.status).toBe(200);
+      expect(res.body.title).toBe("Updated");
+      expect(res.body.description).toBe("New description");
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app)
-  //       .put("/tasks/999")
-  //       .send({ title: "Updated" });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app)
+        .put("/tasks/999")
+        .send({ title: "Updated" });
 
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+      expect(res.status).toBe(404);
+    });
+  });
 
   // describe("DELETE /tasks/:id", () => {
   //   it("should delete a task", async () => {
