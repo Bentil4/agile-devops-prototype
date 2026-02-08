@@ -89,25 +89,25 @@ describe("Task Management API", () => {
     });
   });
 
-  // describe("DELETE /tasks/:id", () => {
-  //   it("should delete a task", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "To Delete" });
+  describe("DELETE /tasks/:id", () => {
+    it("should delete a task", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "To Delete" });
 
-  //     const taskId = createRes.body.id;
-  //     const deleteRes = await request(app).delete(`/tasks/${taskId}`);
-  //     expect(deleteRes.status).toBe(204);
+      const taskId = createRes.body.id;
+      const deleteRes = await request(app).delete(`/tasks/${taskId}`);
+      expect(deleteRes.status).toBe(204);
 
-  //     const getRes = await request(app).get(`/tasks/${taskId}`);
-  //     expect(getRes.status).toBe(404);
-  //   });
+      const getRes = await request(app).get(`/tasks/${taskId}`);
+      expect(getRes.status).toBe(404);
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app).delete("/tasks/999");
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app).delete("/tasks/999");
+      expect(res.status).toBe(404);
+    });
+  });
 
   // describe("PATCH /tasks/:id/complete", () => {
   //   it("should toggle task completion", async () => {
