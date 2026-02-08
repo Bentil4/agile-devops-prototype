@@ -19,7 +19,7 @@ Deliver the first working increment of the Task Management API with core functio
 
 **Demo:**
 ```bash
-curl http://localhost:5000/health
+curl http://localhost:3000/health
 # Response: {"status": "healthy", "timestamp": "...", "version": "1.0.0"}
 ```
 
