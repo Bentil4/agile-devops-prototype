@@ -1,23 +1,28 @@
 # Sprint 1 Review
 
 ## Sprint Goal
+
 Deliver the first working increment of the Task Management API with core functionality and establish CI/CD pipeline.
 
 ## Sprint Duration
+
 08/02/2026 - 08/02/2026
 
 ---
 
 ## Completed Stories
 
-###  Story 7: Health Check Endpoint (1 point)
+### Story 7: Health Check Endpoint (1 point)
+
 **Status:** Done  
 **Acceptance Criteria Met:**
+
 - [ ] Service returns 200 status on /health
 - [ ] Response includes status, timestamp, and version
 - [ ] Endpoint is testable in CI/CD pipeline
 
 **Demo:**
+
 ```bash
 curl http://localhost:3000/health
 # Response: {"status": "healthy", "timestamp": "...", "version": "1.0.0"}
@@ -25,9 +30,11 @@ curl http://localhost:3000/health
 
 ---
 
-###  Story 1: Create a Task (3 points)
+### Story 1: Create a Task (3 points)
+
 **Status:** Done  
 **Acceptance Criteria Met:**
+
 - [ ] POST /tasks creates a new task
 - [ ] Task requires a title
 - [ ] Task gets unique ID
@@ -35,6 +42,7 @@ curl http://localhost:3000/health
 - [ ] Task is incomplete by default
 
 **Demo:**
+
 ```bash
 curl -X POST http://localhost:5000/tasks \
   -H "Content-Type: application/json" \
@@ -43,28 +51,34 @@ curl -X POST http://localhost:5000/tasks \
 
 ---
 
-###  Story 2: View All Tasks (2 points)
+### Story 2: View All Tasks (2 points)
+
 **Status:** Done  
 **Acceptance Criteria Met:**
+
 - [ ] GET /tasks returns all tasks
 - [ ] Each task includes all properties
 - [ ] Returns 200 status code
 
 **Demo:**
+
 ```bash
 curl http://localhost:5000/tasks
 ```
 
 ---
 
-###  Story 5: Mark Task as Complete (2 points)
+### Story 5: Mark Task as Complete (2 points)
+
 **Status:** Done  
 **Acceptance Criteria Met:**
+
 - [ ] PATCH /tasks/:id/complete toggles status
 - [ ] Returns 200 with updated task
 - [ ] Returns 404 if task not found
 
 **Demo:**
+
 ```bash
 curl -X PATCH http://localhost:5000/tasks/1/complete
 ```
@@ -73,22 +87,23 @@ curl -X PATCH http://localhost:5000/tasks/1/complete
 
 ## Sprint Metrics
 
-| Metric | Planned | Actual |
-|--------|---------|--------|
-| Story Points Committed | 8 | 8 |
-| Story Points Completed | 8 | 8 |
-| Stories Committed | 4 | 4 |
-| Stories Completed | 4 | 4 |
-| Commits Made | - | [Fill in] |
-| Tests Written | - | 6 |
-| Test Coverage | >80% | [Fill in]% |
-| Pipeline Runs | - |  |
+| Metric                 | Planned | Actual     |
+| ---------------------- | ------- | ---------- |
+| Story Points Committed | 8       | 8          |
+| Story Points Completed | 8       | 8          |
+| Stories Committed      | 4       | 4          |
+| Stories Completed      | 4       | 4          |
+| Commits Made           | -       | [Fill in]  |
+| Tests Written          | -       | 6          |
+| Test Coverage          | >80%    | [Fill in]% |
+| Pipeline Runs          | -       |            |
 
 ---
 
 ## Technical Achievements
 
 ### CI/CD Pipeline
+
 - [x] GitHub Actions workflow created
 - [x] Automated testing on push
 - [x] Health check validation
@@ -96,6 +111,7 @@ curl -X PATCH http://localhost:5000/tasks/1/complete
 - [ ] 2 failed runs (if any)
 
 ### Testing
+
 - [x] Unit tests for all endpoints
 - [x] Test coverage > 80%
 - [x] Tests run in CI/CD
@@ -103,6 +119,7 @@ curl -X PATCH http://localhost:5000/tasks/1/complete
 - [ ] All tests passing: Yes
 
 ### Code Quality
+
 - [x] Clean commit history
 - [x] Meaningful commit messages
 - [x] No commented-out code
@@ -113,26 +130,31 @@ curl -X PATCH http://localhost:5000/tasks/1/complete
 ## Demo Screenshots
 
 ### 1. Health Endpoint Response
-![alt text](../screenshots/health.png)
+
+![alt health check](../screenshots/health.png)
 
 ### 2. Create Task Response
-![alt text](<../screenshots/create task.png>)
+
+![alt create task](<../screenshots/create task.png>)
 
 ### 3. Get All Tasks Response
-![alt text](<../screenshots/get all task.png>)
+
+![alt get all task](<../screenshots/get all task.png>)
 
 ### 5. CI/CD Pipeline Success
-![alt text](<../screenshots/ci succ 1.png>)
+
+![alt CI/CD pipeline success](<../screenshots/ci succ 1.png>)
 
 ### 6. Test Results
-![alt text](<../screenshots/test 1.png>)
+
+![alt test result](<../screenshots/test 1.png>)
 
 ---
 
 ## Challenges Encountered
 
 1. Initial setup took longer than expected
-2. Learning curve with GitHub Action
+2. Learning curve with GitHub Actions
 
 ---
 
@@ -143,10 +165,10 @@ curl -X PATCH http://localhost:5000/tasks/1/complete
 
 ---
 
-
 ## Definition of Done Compliance
 
 All stories met the Definition of Done:
+
 - [x] Code quality standards met
 - [x] Tests written and passing
 - [x] CI/CD pipeline passing
@@ -157,6 +179,7 @@ All stories met the Definition of Done:
 ---
 
 ## Stakeholder Feedback
+
 The Sprint 1 increment successfully delivers a working Task Management API with core CRUD operations and automated testing infrastructure.
 
 ---
@@ -164,6 +187,7 @@ The Sprint 1 increment successfully delivers a working Task Management API with 
 ## Next Sprint Preview
 
 Sprint 2 will focus on:
+
 - Update task functionality
 - Delete task functionality
 - Filter tasks by status

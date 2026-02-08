@@ -53,8 +53,6 @@
 
 ---
 
-## Process Observations
-
 ### Time Management
 
 - **Estimated vs Actual:** [How accurate were story point estimates?]
