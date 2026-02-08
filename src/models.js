@@ -50,10 +50,10 @@ export class TaskManager {
     return false;
   }
 
-  // toggleComplete(taskId) {
-  //   const task = this.tasks[taskId];
-  //   if (!task) return null;
-  //   task.completed = !task.completed;
-  //   return task;
-  // }
+  toggleComplete(taskId) {
+    const task = this.tasks[taskId];
+    if (!task) return null;
+    task.completed = !task.completed;
+    return task;
+  }
 }
