@@ -24,19 +24,19 @@ app.post('/tasks', (req, res) => {
   res.status(201).json(task);
 });
 
-// app.get('/tasks', (req, res) => {
-//   const { status } = req.query;
-//   const tasks = taskManager.getAllTasks(status);
-//   res.status(200).json(tasks);
-// });
+app.get('/tasks', (req, res) => {
+  const { status } = req.query;
+  const tasks = taskManager.getAllTasks(status);
+  res.status(200).json(tasks);
+});
 
-// app.get('/tasks/:id', (req, res) => {
-//   const task = taskManager.getTask(parseInt(req.params.id));
-//   if (!task) {
-//     return res.status(404).json({ error: 'Task not found' });
-//   }
-//   res.status(200).json(task);
-// });
+app.get('/tasks/:id', (req, res) => {
+  const task = taskManager.getTask(parseInt(req.params.id));
+  if (!task) {
+    return res.status(404).json({ error: 'Task not found' });
+  }
+  res.status(200).json(task);
+});
 
 // app.put('/tasks/:id', (req, res) => {
 //   const task = taskManager.updateTask(parseInt(req.params.id), req.body);
