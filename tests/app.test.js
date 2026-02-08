@@ -33,36 +33,36 @@ describe("Task Management API", () => {
     });
   });
 
-  // describe("GET /tasks", () => {
-  //   it("should return all tasks", async () => {
-  //     await request(app).post("/tasks").send({ title: "Task 1" });
-  //     await request(app).post("/tasks").send({ title: "Task 2" });
+  describe("GET /tasks", () => {
+    it("should return all tasks", async () => {
+      await request(app).post("/tasks").send({ title: "Task 1" });
+      await request(app).post("/tasks").send({ title: "Task 2" });
 
-  //     const res = await request(app).get("/tasks");
-  //     expect(res.status).toBe(200);
-  //     expect(Array.isArray(res.body)).toBe(true);
-  //     expect(res.body.length).toBeGreaterThanOrEqual(2);
-  //   });
-  // });
+      const res = await request(app).get("/tasks");
+      expect(res.status).toBe(200);
+      expect(Array.isArray(res.body)).toBe(true);
+      expect(res.body.length).toBeGreaterThanOrEqual(2);
+    });
+  });
 
-  // describe("GET /tasks/:id", () => {
-  //   it("should return a specific task", async () => {
-  //     const createRes = await request(app)
-  //       .post("/tasks")
-  //       .send({ title: "Test Task" });
+  describe("GET /tasks/:id", () => {
+    it("should return a specific task", async () => {
+      const createRes = await request(app)
+        .post("/tasks")
+        .send({ title: "Test Task" });
 
-  //     const taskId = createRes.body.id;
-  //     const res = await request(app).get(`/tasks/${taskId}`);
+      const taskId = createRes.body.id;
+      const res = await request(app).get(`/tasks/${taskId}`);
 
-  //     expect(res.status).toBe(200);
-  //     expect(res.body.title).toBe("Test Task");
-  //   });
+      expect(res.status).toBe(200);
+      expect(res.body.title).toBe("Test Task");
+    });
 
-  //   it("should return 404 for nonexistent task", async () => {
-  //     const res = await request(app).get("/tasks/999");
-  //     expect(res.status).toBe(404);
-  //   });
-  // });
+    it("should return 404 for nonexistent task", async () => {
+      const res = await request(app).get("/tasks/999");
+      expect(res.status).toBe(404);
+    });
+  });
 
   // describe("PUT /tasks/:id", () => {
   //   it("should update a task", async () => {
