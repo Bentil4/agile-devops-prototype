@@ -44,7 +44,7 @@ curl http://localhost:3000/health
 **Demo:**
 
 ```bash
-curl -X POST http://localhost:5000/tasks \
+curl -X POST http://localhost:3000/tasks \
   -H "Content-Type: application/json" \
   -d '{"title": "My Task", "description": "Task description"}'
 ```
@@ -63,7 +63,7 @@ curl -X POST http://localhost:5000/tasks \
 **Demo:**
 
 ```bash
-curl http://localhost:5000/tasks
+curl http://localhost:3000/tasks
 ```
 
 ---
@@ -80,7 +80,7 @@ curl http://localhost:5000/tasks
 **Demo:**
 
 ```bash
-curl -X PATCH http://localhost:5000/tasks/1/complete
+curl -X PATCH http://localhost:3000/tasks/1/complete
 ```
 
 ---
